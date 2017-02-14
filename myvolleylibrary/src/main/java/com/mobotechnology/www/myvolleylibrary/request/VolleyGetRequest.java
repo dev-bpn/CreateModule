@@ -7,10 +7,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mobotechnology.www.myvolleylibrary.events.VolleyResponseEventBus;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 
 public class VolleyGetRequest {
 
-    private String url = "http://sms8383.com/appmodule/appcorpolist";
+    private String url = "http://samples.openweathermap.org/data/2.5/find?q=London&appid=b1b15e88fa797225412429c1c50c122a1";
     private VolleyResponseEventBus volleyResponseEventBus;
 
     public void hitServer(Context context) {
@@ -27,13 +28,19 @@ public class VolleyGetRequest {
         RequestQueue queue = Volley.newRequestQueue(context);
         volleyResponseEventBus = (VolleyResponseEventBus) context;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+        StringRequest jsonObjectRequest = new StringRequest(Request.Method.GET,
                 url,
-                new Response.Listener<JSONObject>() {
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
 
-                        volleyResponseEventBus.onResponseSuccess(response);
+                        try {
+
+                            volleyResponseEventBus.onResponseSuccess(new JSONObject(response));
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 },
@@ -47,7 +54,7 @@ public class VolleyGetRequest {
                 });
 
         jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                5000,
+                50000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
