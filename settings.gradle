@@ -1,1 +1,1 @@
-include ':app', ':myvolleylibrary', ':myretrofitlibrary'
+include ':app', ':myvolleymodule', ':myretrofitmodule'

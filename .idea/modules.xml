@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CreateLibrary.iml" filepath="$PROJECT_DIR$/CreateLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/myretrofitlibrary/myretrofitlibrary.iml" filepath="$PROJECT_DIR$/myretrofitlibrary/myretrofitlibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/myvolleylibrary/myvolleylibrary.iml" filepath="$PROJECT_DIR$/myvolleylibrary/myvolleylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myretrofitmodule/myretrofitmodule.iml" filepath="$PROJECT_DIR$/myretrofitmodule/myretrofitmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myvolleymodule/myvolleymodule.iml" filepath="$PROJECT_DIR$/myvolleymodule/myvolleymodule.iml" />
     </modules>
   </component>
 </project>

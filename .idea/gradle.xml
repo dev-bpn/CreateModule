@@ -9,8 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/myretrofitlibrary" />
-            <option value="$PROJECT_DIR$/myvolleylibrary" />
+            <option value="$PROJECT_DIR$/myretrofitmodule" />
+            <option value="$PROJECT_DIR$/myvolleymodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

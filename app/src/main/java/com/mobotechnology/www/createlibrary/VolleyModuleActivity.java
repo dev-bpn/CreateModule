@@ -35,6 +35,10 @@ public class VolleyModuleActivity extends AppCompatActivity implements VolleyRes
 
     private void initViews() {
 
+        /** Title to actionbar*/
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("Volley Module");
+
         /** Initialize Views*/
         textView = (TextView) findViewById(R.id.textView);
 
